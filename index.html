@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinnacle Freight Services</title>
+  
+  <!-- Google Fonts: Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Apply Roboto Font */
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #ffffff; /* White background for main site */
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    /* Header (Logo at 25% Width) */
+    header {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px 0;
+    }
+    header img {
+      width: 25%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #0a2463; /* Flag blue */
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #f51720; /* Red */
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #dd0510; /* Darker red on hover */
+    }
+
+    /* HERO SECTION with a Truck Background */
+    .hero {
+      background: url("/Users/Phil/Desktop/trucks1.jpg") no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 80px 20px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #f51720; /* Red */
+      color: #ffffff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #dd0510; /* Slightly darker red on hover */
+      transform: scale(1.05);
+    }
+
+    /* Main Content Container */
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center; /* Center-align all text */
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      color: #0a2463; /* Flag blue */
+      position: relative;
+      display: inline-block;
+    }
+    h2::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 50%;
+      background-color: #f51720; /* Red accent */
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 40px;
+      text-align: left; /* Left-align list items */
+      display: inline-block; /* Center the list */
+      margin: 0 auto;
+    }
+
+    /* WHY CHOOSE US LIST STYLING */
+    .why-list li {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .why-list li strong {
+      color: #0a2463; /* Flag blue text highlight */
+    }
+
+    /* CONTACT FORM STYLING */
+    #contact form {
+      max-width: 500px;
+      margin: 20px auto;
+      text-align: left; /* Left-align the form fields */
+      background-color: #f9f9f9; /* Light background for the form */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact input,
+    #contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    #contact button {
+      background-color: #0a2463; /* Flag blue */
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #contact button:hover {
+      background-color: #f51720; /* Red on hover */
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a2463; /* Same blue */
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    /* Google Button Styling */
+    .google-button {
+      display: inline-block;
+      background-color: #4285F4; /* Google Blue */
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .google-button:hover {
+      background-color: #357ae8;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5em;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      #contact form {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER: Logo -->
+  <header>
+    <!-- Update the src to match your actual file path -->
+    <img src="/Users/Phil/Desktop/logo.jpg" alt="Pinnacle Freight Services Logo">
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why-choose-us">Why Choose Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION with Truck Background -->
+  <div class="hero">
+    <h2>Fast, Reliable Freight Solutions</h2>
+    <p>Experience seamless logistics that empower your business to move forward, faster.</p>
+    <!-- Button that opens an email -->
+    <a class="cta-button" href="mailto:pluna@pinnaclefreightservices.com">Contact Us</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- ABOUT SECTION (CENTERED) -->
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        <strong>Pinnacle Freight Services</strong> is a veteran-owned and operated business dedicated 
+        to redefining the standard of freight delivery. Backed by a team of industry experts, we’ve 
+        developed comprehensive solutions for businesses of all sizes, from local retailers to 
+        nationwide distributors.
+      </p>
+      <p>
+        Our philosophy is simple—deliver on time, communicate transparently, and ensure your 
+        freight is handled with the utmost care. With years of experience navigating complex 
+        shipping challenges, we leverage cutting-edge technology and a robust network of trusted 
+        carriers to guarantee dependable service.
+      </p>
+      <p>
+        Whether you need to move a single pallet or manage an entire supply chain, we tailor our 
+        approach to meet your unique requirements. Let us handle the logistics while you focus on 
+        growing your business.
+      </p>
+    </section>
+
+    <!-- SERVICES SECTION (CENTERED) -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>From local deliveries to large-scale logistics operations, we've got you covered:</p>
+      <ul>
+        <li>
+          <strong>Freight Shipping:</strong> 
+          We offer both full truckload and less-than-truckload (LTL) solutions, ensuring your goods arrive safely and on schedule. Our dedicated fleet and reliable carriers work around the clock to provide seamless transportation services tailored to your specific needs.
+        </li>
+        <li>
+          <strong>Logistics Consultation:</strong> 
+          Get expert advice on how to streamline your shipping process, optimize routes, and cut costs. Our consultants analyze your current logistics operations and implement strategies that enhance efficiency, reduce expenses, and improve overall supply chain performance.
+        </li>
+        <li>
+          <strong>Warehousing & Distribution:</strong> 
+          Take advantage of secure storage facilities and efficient distribution channels for your inventory. Our state-of-the-art warehouses are equipped with the latest technology to manage your stock effectively, ensuring timely distribution and minimizing downtime.
+        </li>
+      </ul>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION (CENTERED) -->
+    <section id="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <ul class="why-list">
+        <li>
+          <strong>On-Time Delivery:</strong> 
+          We meticulously plan routes and schedules to achieve a consistently high on-time performance, ensuring your shipments arrive when you need them.
+        </li>
+        <li>
+          <strong>Competitive Rates:</strong> 
+          Through partnerships with multiple carriers, we negotiate favorable rates and pass the savings on to you, providing cost-effective solutions without compromising quality.
+        </li>
+        <li>
+          <strong>Expert Support:</strong> 
+          Our team is available to answer questions, resolve issues, and handle last-minute changes with agility and professionalism, ensuring a smooth and hassle-free experience.
+        </li>
+        <li>
+          <strong>Cutting-Edge Technology:</strong> 
+          We employ advanced tracking and reporting tools so you can monitor your freight in real time, ensuring transparency at every step and enabling you to make informed decisions.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Ready to streamline your freight operations? Reach out:</p>
+      
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="_replyto" placeholder="Your Email" required><br><br>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
+        <button type="submit">Send</button>
+      </form>
+      
+      <!-- Contact Information -->
+      <ul>
+        <li><strong>Phone:</strong> <a href="tel:+12602063214">260-206-3214</a></li>
+        <li><strong>Email:</strong> <a href="mailto:pluna@pinnaclefreightservices.com">pluna@pinnaclefreightservices.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Pinnacle Freight Services. All Rights Reserved.</p>
+    
+    <!-- Google Business Profile Link -->
+    <a href="https://your-google-business-profile-link" target="_blank" rel="noopener noreferrer" class="google-button">
+      View us on Google
+    </a>
+  </footer>
+
+</body>
+</html>
+
+
